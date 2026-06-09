@@ -1,6 +1,6 @@
-import type { Knex } from 'knex';
-import knex from 'knex';
-import { env } from './env';
+import type { Knex } from "knex";
+import knex from "knex";
+import { env } from "./env";
 
 function createConnectionConfig(): Knex.StaticConnectionConfig | string {
   if (env.db.url) {
@@ -18,7 +18,7 @@ function createConnectionConfig(): Knex.StaticConnectionConfig | string {
 
 export function createKnexInstance(): Knex {
   return knex({
-    client: 'mysql2',
+    client: "mysql2",
     connection: createConnectionConfig(),
     pool: {
       min: 2,

@@ -11,7 +11,7 @@ Demo Credit is an MVP wallet API for a mobile lending product. Borrowers receive
 ## Live API
 
 ```
-https://sunday-prince-lendsqr-be-test.<your-platform-domain>
+https://sunday-prince-lendsqr-be-test.up.railway.app/
 ```
 
 Health check (unversioned):
@@ -324,6 +324,8 @@ Server starts at `http://localhost:3000`.
 | `ADJUTOR_BASE_URL` | `https://adjutor.lendsqr.com/v2`    |
 | `ADJUTOR_API_KEY`  | Your Adjutor API key                |
 
+NOTE: If there is DB_URL, the code automatically takes that over the other database credentials
+
 ### Seed data
 
 Three test users are created by `npm run seed:run`. All use password `SecurePass123!`.
@@ -361,12 +363,13 @@ Tests use **Jest** with **ts-jest**. Services are tested in isolation. Repositor
 
 ## Deployment
 
-Deploy to Railway, Heroku, or any platform that supports Node.js and MySQL.
+Deployed to Railway
 
 **Target URL format:**
 
 ```
 https://sunday-prince-lendsqr-be-test.<platform-domain>
+My Live Link: https://sunday-prince-lendsqr-be-test.up.railway.app
 ```
 
 ### Production checklist
