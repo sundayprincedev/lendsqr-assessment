@@ -1,0 +1,33 @@
+export const API_VERSION = 'v1';
+export const API_PREFIX = `/api/${API_VERSION}`;
+
+export const DEFAULT_CURRENCY = 'NGN';
+export const KOBO_PER_NAIRA = 100;
+
+export enum TransactionType {
+  CREDIT = 'credit',
+  DEBIT = 'debit',
+  TRANSFER_IN = 'transfer_in',
+  TRANSFER_OUT = 'transfer_out',
+}
+
+export enum TransactionStatus {
+  PENDING = 'pending',
+  SUCCESS = 'success',
+  FAILED = 'failed',
+}
+
+export enum ErrorCode {
+  VALIDATION_ERROR = 'VALIDATION_ERROR',
+  USER_BLACKLISTED = 'USER_BLACKLISTED',
+  USER_EXISTS = 'USER_EXISTS',
+  USER_NOT_FOUND = 'USER_NOT_FOUND',
+  WALLET_NOT_FOUND = 'WALLET_NOT_FOUND',
+  INSUFFICIENT_BALANCE = 'INSUFFICIENT_BALANCE',
+  DUPLICATE_REFERENCE = 'DUPLICATE_REFERENCE',
+  SELF_TRANSFER = 'SELF_TRANSFER',
+  UNAUTHORIZED = 'UNAUTHORIZED',
+  KARMA_SERVICE_ERROR = 'KARMA_SERVICE_ERROR',
+  NOT_FOUND = 'NOT_FOUND',
+  INTERNAL_ERROR = 'INTERNAL_ERROR',
+}

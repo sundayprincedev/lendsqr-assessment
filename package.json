@@ -1,0 +1,43 @@
+{
+  "name": "demo-credit",
+  "version": "1.0.0",
+  "description": "Demo Credit wallet service — Lendsqr backend assessment",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "migrate:latest": "knex --knexfile knexfile.ts migrate:latest",
+    "migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback",
+    "seed:run": "knex --knexfile knexfile.ts seed:run"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "keywords": [],
+  "author": "Sunday Prince",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "joi": "^18.2.1",
+    "knex": "^3.2.10",
+    "mysql2": "^3.22.5",
+    "uuid": "^14.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.9.2",
+    "@types/uuid": "^10.0.0",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.11",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^6.0.3"
+  }
+}
