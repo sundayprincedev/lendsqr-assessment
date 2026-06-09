@@ -1,0 +1,23 @@
+meta {
+  name: Get Balance
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{baseUrl}}/api/v1/wallet/balance
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns current wallet balance and 10 most recent transactions.
+}

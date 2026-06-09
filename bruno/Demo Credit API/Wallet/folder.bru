@@ -1,0 +1,18 @@
+meta {
+  name: Wallet
+  seq: 3
+}
+
+auth {
+  mode: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  All wallet routes require Authorization: Bearer token.
+
+  Run Auth > Register first. Token is saved to the environment.
+}

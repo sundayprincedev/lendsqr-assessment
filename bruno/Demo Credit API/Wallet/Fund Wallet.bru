@@ -1,0 +1,36 @@
+meta {
+  name: Fund Wallet
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/api/v1/wallet/fund
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "amount": 5000.00,
+    "reference": "fund-{{$timestamp}}"
+  }
+}
+
+docs {
+  Credits the authenticated user's wallet.
+
+  amount is in Naira (converted to kobo internally).
+  reference must be unique — used for idempotency.
+
+  Run Register first to get a token.
+}

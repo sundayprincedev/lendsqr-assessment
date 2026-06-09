@@ -1,0 +1,35 @@
+meta {
+  name: Withdraw Funds
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/api/v1/wallet/withdraw
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "amount": 1000.00,
+    "reference": "withdraw-{{$timestamp}}"
+  }
+}
+
+docs {
+  Debits the authenticated user's wallet.
+
+  Errors:
+  - 400 INSUFFICIENT_BALANCE
+  - 409 DUPLICATE_REFERENCE
+}

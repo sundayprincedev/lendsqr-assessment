@@ -1,0 +1,43 @@
+meta {
+  name: Login
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/v1/auth/login
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+body:json {
+  {
+    "email": "{{loginEmail}}",
+    "password": "{{loginPassword}}"
+  }
+}
+
+vars:post-response {
+  token: res.body.data.token
+}
+
+script:post-response {
+  const body = res.getBody();
+
+  if (body?.data?.token) {
+    bru.setEnvVar("token", body.data.token);
+    bru.setVar("token", body.data.token);
+  }
+}
+
+docs {
+  Signs in an existing user and returns a Bearer token.
+
+  Default credentials match the seed user John Doe.
+  Token is saved to the environment automatically.
+}

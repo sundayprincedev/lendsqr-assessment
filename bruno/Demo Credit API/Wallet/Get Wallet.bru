@@ -1,0 +1,25 @@
+meta {
+  name: Get Wallet
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{baseUrl}}/api/v1/wallet
+  body: none
+  auth: bearer
+}
+
+headers {
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+docs {
+  Returns the authenticated user's wallet details.
+
+  Run Login or Register first to obtain a token.
+}

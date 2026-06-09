@@ -1,0 +1,40 @@
+meta {
+  name: Transfer Funds
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/v1/wallet/transfer
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+body:json {
+  {
+    "recipient_email": "{{recipientEmail}}",
+    "amount": 2000.00,
+    "reference": "transfer-{{$timestamp}}"
+  }
+}
+
+docs {
+  Transfers funds to another user by email.
+
+  Seeded recipient: jane@example.com (change recipientEmail in environment).
+
+  Errors:
+  - 400 INSUFFICIENT_BALANCE
+  - 404 USER_NOT_FOUND
+  - 422 SELF_TRANSFER
+  - 409 DUPLICATE_REFERENCE
+}
